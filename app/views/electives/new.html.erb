@@ -1,0 +1,44 @@
+<br>
+<br>
+<div class='page-header'>
+<h4>Registration Page</h4>
+</div>
+
+<% if @Elective.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@Elective.errors.count, "error") %> prohibited this selection from being saved:</h2>
+    <ul>
+    <% @Elective.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= simple_form_for @Elective do |f| %>
+
+<div class="form-group form-group-lg">
+<div class="col-sm-7">
+<%= f.input :regno, label: 'Enter Registration Number' %>
+</div>
+</div>
+
+<div class="form-group form-group-lg">
+<div class="col-sm-7">
+<%= f.input :elec1, label: 'Elective 1', collection: ["Service Oriented Architecture","Introduction  to VLSI",
+"Pervasive Computing ","Data Warehousing and  Data Mining","Telecommunications and Switching Techniques","Parallel and Distributed Systems" ] %>
+</div>
+</div>
+
+<div class="form-group form-group-lg">
+<div class="col-sm-7">
+<%= f.input :elec2, label: 'Elective 2', collection: ["Service Oriented Architecture","Introduction  to VLSI",
+"Pervasive Computing ","Data Warehousing and  Data Mining","Telecommunications and Switching Techniques","Parallel and Distributed Systems" ] %>
+</div>
+</div>
+
+<div class="form-group">
+    <div class="col-lg-10">
+  <%= f.button :submit,:class => "btn-success"%></div></div>
+  
+<% end %>

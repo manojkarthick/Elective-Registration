@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  regno: 1
+  elec1: 1
+  elec2: MyString
+
+two:
+  regno: 1
+  elec1: 1
+  elec2: MyString

@@ -1,0 +1,81 @@
+Documentation:
+
+
+rails new ElectiveRegistration
+gem 'devise'
+gem 'simple_form'
+bundle install
+
+
+rails generate devise:install
+
+
+config/environments/development.rb
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+app/views/layouts/application.html.erb
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+rails g devise user
+rake db:migrate
+
+
+
+rename to .rb the migration file
+
+rails generate devise:views
+
+
+rails generate migration add_fields_to_devise
+modify the migration file
+create columns 
+rake db:migrate
+
+
+after starting rails server will encounter
+TypeError: Object doesn't support this property or method
+  (in C:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/turbolinks-2.5.3/lib/assets/javascripts/turbolinks.js.coffee)
+
+
+  modify gemfile to get rid of this error..
+
+
+  Add to Gemfile
+
+gem 'coffee-script-source', '1.8.0'
+then, run
+
+bundle update coffee-script-source
+
+
+
+
+To use bootstrap:
+install bootstrap files in ruby
+rails generate simple_form:install
+rails generate simple_form:install --bootstrap
+
+
+
+
+
+
+
+Direct to login page immediately
+devise_for :users
+
+devise_scope :user do
+  authenticated :user do
+    root 'home#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
