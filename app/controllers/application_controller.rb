@@ -9,9 +9,12 @@ class ApplicationController < ActionController::Base
 	def after_sign_up_path_for(resource)
 			electives_path
 	end
+<<<<<<< HEAD
 
 	def sign_out_and_redirect(resource_or_scope)
   			new_user_session
 	end
 
+=======
+>>>>>>> parent of 702a71b... Bootstrap Issue
 end
