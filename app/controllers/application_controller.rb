@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 			electives_path
 	end
 
-	def sign_out_and_redirect(resource_or_scope)
-  			new_user_session
+	def sign_out_and_redirect(resource)
+  			destroy_user_session_path
 	end
 
 end
