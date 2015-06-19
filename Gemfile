@@ -10,8 +10,9 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
-group :production do
+group :production, :staging do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
