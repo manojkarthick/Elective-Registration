@@ -60,6 +60,7 @@ GEM
     minitest (5.7.0)
     multi_json (1.11.0)
     orm_adapter (0.5.0)
+    pg (0.17.1-x86-mingw32)
     rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -122,11 +123,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bundler
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
